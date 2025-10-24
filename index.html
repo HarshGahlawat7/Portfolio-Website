@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Gahlawat - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-white font-sans dark">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">Harsh Gahlawat</div>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
+                <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                <li><a href="assests/pdfs/Harsh Gahlawat_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Resume</a></li>
+            </ul>
+            <button id="theme-toggle" class="w-8 h-8 mr-2 glow-border">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path id="theme-icon"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+  <!-- Animated Canvas Background -->
+  <canvas id="animated-bg" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+  <!-- Foreground Content -->
+  <div class="relative z-10 max-w-7xl w-full px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Text Content -->
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-6xl font-bold">Hey 👋, I am Harsh</h1>
+      <p class="text-lg md:text-xl">A tech enthusiast building elegant & interactive websites.</p>
+      <div class="space-x-4">
+        <a href="#projects" class="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition">View Projects</a>
+        <a href="#contact" class="px-6 py-2 rounded-lg border border-white hover:bg-white hover:text-black transition">Contact</a>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="flex justify-center md:justify-end">
+      <img src="assests/images/your-photo.jpg" alt="Harsh Photo" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow-lg object-cover">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Toggle Button -->
+<button id="chatbotToggle" class="chat-toggle-btn">
+  <i data-lucide="message-circle" class="lucide-icon"></i>
+</button>
+
+<!-- Chatbot Panel -->
+<div id="chatbotOverlay" class="chat-overlay hidden">
+  <div class="chat-header">
+    <div class="flex items-center gap-2">
+      <img src="https://i.pravatar.cc/40?img=12" class="w-7 h-7 rounded-full" />
+      <span>Chat with Me</span>
+    </div>
+    <button id="closeChatbot" class="close-btn">
+      <i data-lucide="x" class="lucide-icon"></i>
+    </button>
+  </div>
+
+  <!-- Chat Area -->
+  <div id="chatMessages" class="chat-messages">
+    <div class="placeholder-text">Start a conversation...</div>
+  </div>
+
+  <!-- Input Form -->
+  <form id="chatForm" class="chat-form">
+    <input id="chatInput" type="text" class="chat-input" placeholder="Type your message..." />
+    <button type="submit" class="send-btn">
+      <i data-lucide="send" class="lucide-icon"></i>
+    </button>
+  </form>
+</div>
+
+<!-- About Section -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <img src="assets/about.jpg" alt="About" class="w-48 h-48 rounded-full mb-4 md:mb-0 md:mr-8">
+                <div>
+                    <p class="mb-4">With over 5 years of experience in web development and data science, I specialize in
+                        creating responsive, accessible web applications and leveraging AI/ML to solve complex problems.
+                    </p>
+                    <p class="mb-4">My expertise spans full-stack development, machine learning, and large language
+                        models. I’m passionate about clean code, innovative AI solutions, and delivering user-centered
+                        experiences.</p>
+                    <p>When I'm not coding or analyzing data, you'll find me exploring new tech trends, contributing to
+                        open-source projects, or enjoying a good cup of coffee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills & Technologies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-separate">
+                <!-- Programming & Tools -->
+                <div class="skill-category border-r border-gray-700 pr-4">
+                    <h3
+                        class="text-xl font-bold text-blue-500 hover:text-blue-400 cursor-pointer transition-colors duration-300">
+                        Programming & Tools</h3>
+                    <div class="sub-skills hidden mt-4">
+                        <ul class="space-y-4 timeline">
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" title="Python"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Python - Core programming language for development and data science</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="assests/images/R.png" alt="R" title="R"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>R - Statistical computing and graphics</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git/GitHub"
+                                    title="Git/GitHub"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Git/GitHub - Version control and collaboration</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="assests/images/Jupyter.png" alt="Jupyter" title="Jupyter"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Jupyter - Interactive notebooks for data analysis</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"
+                                    alt="VS Code" title="VS Code"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>VS Code - Primary code editor</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/api-settings.png" alt="REST APIs"
+                                    title="REST APIs"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>REST APIs - Building and consuming APIs</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML/CSS"
+                                    title="HTML/CSS"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>HTML/CSS - Web development fundamentals</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Data Science -->
+                <div class="skill-category border-r border-gray-700 pr-4">
+                    <h3
+                        class="text-xl font-bold text-purple-500 hover:text-purple-400 cursor-pointer transition-colors duration-300">
+                        Data Science</h3>
+                    <div class="sub-skills hidden mt-4">
+                        <ul class="space-y-4 timeline">
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL" title="SQL"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>SQL - Database querying and management</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/pandas.png" alt="Pandas" title="Pandas"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Pandas - Data manipulation and analysis</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/color/48/000000/numpy.png" alt="NumPy" title="NumPy"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>NumPy - Numerical computing</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/bar-chart.png" alt="Matplotlib"
+                                    title="Matplotlib"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Matplotlib - Data visualization</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/line-chart.png" alt="Seaborn"
+                                    title="Seaborn"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Seaborn - Statistical data visualization</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/broom.png" alt="Data Cleaning"
+                                    title="Data Cleaning"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Data Cleaning - Preparing data for analysis</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/settings.png" alt="Preprocessing"
+                                    title="Preprocessing"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Preprocessing - Data transformation for ML</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/data-recovery.png" alt="EDA"
+                                    title="EDA" class="w-8 h-8 mr-2 glow-border">
+                                <span>EDA - Exploratory Data Analysis</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Machine Learning -->
+                <div class="skill-category border-r border-gray-700 pr-4">
+                    <h3
+                        class="text-xl font-bold text-blue-500 hover:text-blue-400 cursor-pointer transition-colors duration-300">
+                        Machine Learning</h3>
+                    <div class="sub-skills hidden mt-4">
+                        <ul class="space-y-4 timeline">
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/machine-learning.png"
+                                    alt="Scikit-learn" title="Scikit-learn"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Scikit-learn - Machine learning library</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/decision.png" alt="Decision Trees"
+                                    title="Decision Trees"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Decision Trees - Tree-based ML models</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="assests/images/regression.png" alt="Regression" title="Regression"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Regression - Predicting continuous outcomes</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/classroom.png"
+                                    alt="Classification" title="Classification"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Classification - Predicting categorical outcomes</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="assests/images/nlp-logo.png" alt="KNN" title="KNN"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>NLP - Natural Language Processing</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/support.png" alt="SVM" title="SVM"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>SVM - Support Vector Machines</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/checklist.png"
+                                    alt="Cross Validation" title="Cross Validation"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Cross Validation - Model evaluation technique</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="assests/images/hyperparameter.png" alt="Hyperparameter Tuning"
+                                    title="Hyperparameter Tuning"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Hyperparameter Tuning - Optimizing ML model performance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- AI & LLMs -->
+                <div class="skill-category">
+                    <h3
+                        class="text-xl font-bold text-purple-500 hover:text-purple-400 cursor-pointer transition-colors duration-300">
+                        AI & LLMs</h3>
+                    <div class="sub-skills hidden mt-4">
+                        <ul class="space-y-4 timeline">
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/artificial-intelligence.png"
+                                    alt="Hugging Face" title="Hugging Face"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Hugging Face - Transformers and NLP library</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/transformer.png"
+                                    alt="Transformers" title="Transformers"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Transformers - Deep learning for NLP</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/link.png" alt="LangChain"
+                                    title="LangChain"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>LangChain - Framework for LLM applications</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="LangGraph"
+                                    title="LangGraph"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>LangGraph - Graph-based LLM workflows</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/retrieval.png" alt="RAG"
+                                    title="RAG" class="w-8 h-8 mr-2 glow-border">
+                                <span>RAG - Retrieval-Augmented Generation</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/tuning.png" alt="Fine-tuning"
+                                    title="Fine-tuning"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>Fine-tuning - Customizing LLMs</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/robot.png" alt="AI Agents"
+                                    title="AI Agents"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>AI Agents - Autonomous AI systems</span>
+                            </li>
+                            <li class="flex items-center relative">
+                                <img src="https://img.icons8.com/ios-filled/50/ffffff/api.png" alt="OpenAI API"
+                                    title="OpenAI API"
+                                    class="w-8 h-8 mr-2 glow-border">
+                                <span>OpenAI API - Building with GPT models</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-16 text-center">Featured Projects</h2>
+        <div class="timeline-container relative max-w-6xl mx-auto">
+            <!-- Timeline Line -->
+            <div class="timeline-line absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-blue-400 opacity-30"></div>
+            
+            <!-- Project 1 -->
+            <div class="timeline-item mb-16 flex items-center relative">
+                <div class="timeline-content w-5/12 ml-auto mr-8 project-timeline-card bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date text-sm text-blue-400 font-medium mb-2">December 2024</div>
+                    <h3 class="text-xl font-semibold mb-3">AI-Powered Chatbot</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">A sophisticated chatbot using LangChain and RAG for personalized user interactions with natural language processing capabilities.</p>
+                    
+                    <div class="tech-stack mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">LangChain</span>
+                        <span class="tech-badge">RAG</span>
+                        <span class="tech-badge">OpenAI</span>
+                    </div>
+                    
+                    <div class="project-buttons flex gap-3">
+                        <a href="https://github.com" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                            <span class="btn-icon">📁</span>
+                                GitHub
+                        </a>
+
+                        <a href="#" class="btn-secondary">
+                            <span class="btn-icon">🚀</span>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Dot -->
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-800 z-10"></div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="timeline-item mb-16 flex items-center relative">
+                <div class="timeline-content w-5/12 mr-auto ml-8 project-timeline-card bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date text-sm text-blue-400 font-medium mb-2">November 2024</div>
+                    <h3 class="text-xl font-semibold mb-3">Data Visualization Dashboard</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Interactive dashboard for real-time data analysis featuring dynamic charts, filtering capabilities, and responsive design using Python and Seaborn.</p>
+                    
+                    <div class="tech-stack mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Seaborn</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Flask</span>
+                    </div>
+                    
+                    <div class="project-buttons flex gap-3">
+                        <a href="https://github.com" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                            <span class="btn-icon">📁</span>
+                            GitHub
+                        </a>
+
+                        <a href="#" class="btn-secondary">
+                            <span class="btn-icon">🚀</span>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Dot -->
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-800 z-10"></div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="timeline-item mb-16 flex items-center relative">
+                <div class="timeline-content w-5/12 ml-auto mr-8 project-timeline-card bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date text-sm text-blue-400 font-medium mb-2">October 2024</div>
+                    <h3 class="text-xl font-semibold mb-3">ML Prediction Model</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">A robust machine learning model for classification using Scikit-learn with advanced cross-validation techniques and hyperparameter optimization.</p>
+                    
+                    <div class="tech-stack mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Matplotlib</span>
+                    </div>
+                    
+                    <div class="project-buttons flex gap-3">
+                        <a href="https://github.com" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                            <span class="btn-icon">📁</span>
+                                GitHub
+                        </a>
+
+                        <a href="#" class="btn-secondary">
+                            <span class="btn-icon">🚀</span>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Timeline Dot -->
+                <div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-800 z-10"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Let's Work Together</h2>
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Contact Form -->
+            <div class="md:w-1/2">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2">Name</label>
+                        <input type="text" id="name" class="w-full p-2 border rounded bg-gray-700 text-white">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2">Email</label>
+                        <input type="email" id="email" class="w-full p-2 border rounded bg-gray-700 text-white">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full p-2 border rounded bg-gray-700 text-white">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-2">Message</label>
+                        <textarea id="message" class="w-full p-2 border rounded bg-gray-700 text-white"
+                            rows="5"></textarea>
+                    </div>
+                    <button id="send-message"
+                        class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send Message</button>
+                </div>
+            </div>
+
+            <!-- Contact Info with Icons -->
+            <div class="md:w-1/2">
+                <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+                <p class="mb-4">Ready to bring your ideas to life? I'm always excited to work on new projects and
+                    collaborate with creative minds.</p>
+
+                <!-- Contact Info -->
+                <p class="mb-2 flex items-center space-x-3 group">
+                    <span
+                        class="p-2 rounded-full bg-gray-800 group-hover:bg-yellow-500 transition duration-300 shadow group-hover:shadow-yellow-400/50">
+                        <i data-lucide="mail" class="w-6 h-6 text-yellow-400 group-hover:text-white transition"></i>
+                    </span>
+                    <span>gahlawatharsh69@gmail.com</span>
+                </p>
+                <p class="mb-2 flex items-center space-x-3 group">
+                    <span
+                        class="p-2 rounded-full bg-gray-800 group-hover:bg-red-500 transition duration-300 shadow group-hover:shadow-red-400/50">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-red-400 group-hover:text-white transition"></i>
+                    </span>
+                    <span>delhi </span>
+                </p>
+                <p class="mb-4 flex items-center space-x-3 group">
+                    <span
+                        class="p-2 rounded-full bg-gray-800 group-hover:bg-green-500 transition duration-300 shadow group-hover:shadow-green-400/50">
+                        <i data-lucide="phone" class="w-6 h-6 text-green-400 group-hover:text-white transition"></i>
+                    </span>
+                    <span>+1 (555) 123-4567</span>
+                </p>
+
+                <!-- Social Media Icons -->
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://linkedin.com" aria-label="LinkedIn"
+                        class="p-2 rounded-full bg-gray-800 hover:bg-blue-600 transition duration-300 shadow hover:shadow-blue-500/50">
+                        <i data-lucide="linkedin" class="w-6 h-6 text-blue-600 hover:text-white transition"></i>
+                    </a>
+                    <a href="https://github.com" aria-label="GitHub"
+                        class="p-2 rounded-full bg-gray-800 hover:bg-gray-600 transition duration-300 shadow hover:shadow-gray-400/50">
+                        <i data-lucide="github" class="w-6 h-6 text-gray-300 hover:text-white transition"></i>
+                    </a>
+                    <a href="https://x.com" aria-label="Twitter"
+                        class="p-2 rounded-full bg-gray-800 hover:bg-sky-500 transition duration-300 shadow hover:shadow-sky-400/50">
+                        <i data-lucide="twitter" class="w-6 h-6 text-sky-400 hover:text-white transition"></i>
+                    </a>
+                    <a href="https://instagram.com" aria-label="Instagram"
+                        class="p-2 rounded-full bg-gray-800 hover:bg-pink-600 transition duration-300 shadow hover:shadow-pink-400/50">
+                        <i data-lucide="instagram" class="w-6 h-6 text-pink-500 hover:text-white transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lucide Icons Script (bottom of HTML) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© Harsh Gahlawat 2025</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#privacy" class="hover:text-blue-400">Privacy Policy</a>
+                <a href="#resume" class="hover:text-blue-400">Resume</a>
+                <a href="#blog" class="hover:text-blue-400">Blog</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
